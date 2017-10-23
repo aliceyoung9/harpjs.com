@@ -28,11 +28,11 @@ These five steps will quickly walk you through deploying a Harp app to a persona
 2. ### Clone the Repository
 
   In your terminal, `clone` the repository you just created:
-    
+
   ```sh
   git clone https://github.com/your-github-user-name/your-github-user-name.github.io.git
   ```
-    
+
 3. ### Initialize a Harp app
 
   Your repository is ready, you just need a Harp app there. Initialize a new Harp app into `_harp`.
@@ -96,7 +96,7 @@ These five steps will quickly walk you through deploying a Harp app to a project
 # Always ensure you’re in the right place before deleting files with this command
   git rm -rf .
   ```
- 
+
 3. ### Initialize a Harp app
 
   Your repository is ready, you just need a Harp app there. Initialize a new Harp app into `_harp`.
@@ -132,3 +132,24 @@ These five steps will quickly walk you through deploying a Harp app to a project
 Your Harp app has been successfully deployed to GitHub Pages. Now, you’d probably like to customize it. Read the [five simple rules](http://harpjs.com/docs/development/rules) for templating a Harp application to get started quickly.
 
 If you’d like to use a custom domain with GitHub pages, follow the instructions in the [GitHub Pages documentation](https://help.github.com/articles/setting-up-a-custom-domain-with-pages).
+
+## Troubleshooting
+
+Q: How do I prevent the `harp compile` command from deleting my README (or other text files in the target directory)?
+
+A: Create a folder named `.github` in your repository's top level directory to hold your Github-specific templates. `harp compile` will entirely ignore this folder, but files will still be recognized by the GitHub web interface and be versioned.
+
+##### Example Structure
+```
+myapp/
+├── .github
+    ├── CODE_OF_CONDUCT
+    ├── CONTRIBUTING
+    ├── issue_template
+    ├── README
+    └── SUPPORT
+└── _harp
+    └──  ...              // project source files
+```
+
+  * [Read More: Github Help  ](https://help.github.com/articles/helping-people-contribute-to-your-project/)
